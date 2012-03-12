@@ -1,0 +1,96 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".java" #>
+<#
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "EditTextFragment";
+   string fragmentVariableName = "editTextFragment";
+   string bcIntentName = "MESSAGE_FROM_EDITTEXT_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_EDITTEXT_BROADCAST";
+   string layoutName = "R.layout.edittext_fragment";
+   string className = "EditText";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "EditText";
+   string topView = "MainActivity.sampleListView";
+#>
+package <#= packageName #>;
+
+import com.example.android.actionbarcompat.R;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class <#= fragmentClassName #> extends Fragment {
+	public static final String <#= bcIntentName #> = "<#= bcIntentValue #>";
+	public static final String OUT_MESSAGE_KEY = "OutMessage";
+	public static final String IN_MESSAGE_KEY = "InMessage";
+	//private String inMessage;
+	private View rootView;
+   private Intent intent;
+	
+	// *****************************************************************************
+	// Singleton method used to pass variables to a new Fragment instance.
+	// *****************************************************************************
+	public static <#= fragmentClassName #> newInstance(String inMessage) {
+		<#= fragmentClassName #> <#= fragmentVariableName #> = new <#= fragmentClassName #>();
+		Bundle argumentsBundle = new Bundle(); // create a new Bundle
+		argumentsBundle.putString(IN_MESSAGE_KEY, inMessage);
+		<#= fragmentVariableName #>.setArguments(argumentsBundle);
+		return <#= fragmentVariableName #>;
+	}	
+
+	// *****************************************************************************
+	// Fragment Life Cycle events
+	// *****************************************************************************
+	@Override
+	public void onCreate(Bundle argumentsBundle) {
+		super.onCreate(argumentsBundle);
+		intent = new Intent(<#= bcIntentName #>);
+		//this.inMessage = getArguments().getString(IN_MESSAGE_KEY);
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		rootView = inflater.inflate(<#= layoutName #>, null);
+		// context = rootView.getContext();
+
+		return rootView;
+	}		
+   	
+	private void SendMessage(String message) {
+		intent.putExtra(OUT_MESSAGE_KEY, message);
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		getActivity().sendBroadcast(intent);	
+	}
+}
+
+=============================================================================================================================
+Paste into Activity
+=============================================================================================================================
+
+public void Start<#= className #>Fragment() {
+	if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE
+			&& isTablet()) {
+		Fragment <#= fragmentVariableName #> = (Fragment) fm
+				.findFragmentById(<#= replacer #>);
+		<#= fragmentVariableName #> = <#= fragmentClassName #>.newInstance("<#= instanceParameter #>");
+
+		fm.beginTransaction()
+			.replace(<#= replacer #>, <#= fragmentVariableName #>)
+			.commit();
+	} else {
+		<#= fragmentClassName #> <#= fragmentVariableName #> = <#= fragmentClassName #>
+				.newInstance("<#= instanceParameter #>");
+		getSupportFragmentManager().beginTransaction()
+				.replace(<#= topView #>.getId(), <#= fragmentVariableName #>)
+				.commit();
+	}
+}	
+
+
+

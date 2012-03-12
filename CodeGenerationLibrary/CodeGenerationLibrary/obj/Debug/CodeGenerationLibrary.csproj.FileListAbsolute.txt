@@ -1,0 +1,5 @@
+C:\Dev\Android\CodeGenerationLibrary\CodeGenerationLibrary\bin\Debug\CodeGenerationLibrary.dll
+C:\Dev\Android\CodeGenerationLibrary\CodeGenerationLibrary\bin\Debug\CodeGenerationLibrary.pdb
+C:\Dev\Android\CodeGenerationLibrary\CodeGenerationLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev\Android\CodeGenerationLibrary\CodeGenerationLibrary\obj\Debug\CodeGenerationLibrary.dll
+C:\Dev\Android\CodeGenerationLibrary\CodeGenerationLibrary\obj\Debug\CodeGenerationLibrary.pdb

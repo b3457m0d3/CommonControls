@@ -1,0 +1,205 @@
+﻿
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "EditTextFragment";
+   string fragmentVariableName = "editTextFragment";
+   string bcIntentName = "MESSAGE_FROM_EDITTEXT_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_EDITTEXT_BROADCAST";
+   string layoutName = "R.layout.edittext_fragment";
+   string className = "EditText";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "EditText";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "WeightGravityFragment";
+   string fragmentVariableName = "weightGravityFragment";
+   string bcIntentName = "MESSAGE_FROM_WEIGHTGRAVITY_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_WEIGHTGRAVITY_BROADCAST";
+   string layoutName = "R.layout.weightgravity_fragment";
+   string className = "WeightGravity";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "WeightGravity";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "TextViewFragment";
+   string fragmentVariableName = "textViewFragment";
+   string bcIntentName = "MESSAGE_FROM_TEXTVIEW_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_TEXTVIEW_BROADCAST";
+   string layoutName = "R.layout.textview_fragment";
+   string className = "TextView";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "TextView";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "StylesFragment";
+   string fragmentVariableName = "stylesFragment";
+   string bcIntentName = "MESSAGE_FROM_STYLES_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_STYLES_BROADCAST";
+   string layoutName = "R.layout.styles_fragment";
+   string className = "Styles";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "Styles";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "SpinnerFragment";
+   string fragmentVariableName = "spinnerFragment";
+   string bcIntentName = "MESSAGE_FROM_SPINNER_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_SPINNER_BROADCAST";
+   string layoutName = "R.layout.spinner_fragment";
+   string className = "Spinner";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "Spinner";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "RadioButtonFragment";
+   string fragmentVariableName = "radioButtonFragment";
+   string bcIntentName = "MESSAGE_FROM_RADIOBUTTON_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_RADIOBUTTON_BROADCAST";
+   string layoutName = "R.layout.radiobutton_fragment";
+   string className = "RadioButton";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "RadioButton";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "ListView1Fragment";
+   string fragmentVariableName = "listView1Fragment";
+   string bcIntentName = "MESSAGE_FROM_LISTVIEW1_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_LISTVIEW1_BROADCAST";
+   string layoutName = "R.layout.listview1_fragment";
+   string className = "ListView1";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "ListView1";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "LayoutTable1Fragment";
+   string fragmentVariableName = "layoutTable1Fragment";
+   string bcIntentName = "MESSAGE_FROM_LAYOUTTABLE1_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_LAYOUTTABLE1_BROADCAST";
+   string layoutName = "R.layout.layouttable1_fragment";
+   string className = "LayoutTable1";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "LayoutTable1";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "LayoutRelativeFragment";
+   string fragmentVariableName = "layoutRelativeFragment";
+   string bcIntentName = "MESSAGE_FROM_LAYOUTRELATIVE_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_LAYOUTRELATIVE_BROADCAST";
+   string layoutName = "R.layout.layoutrelative_fragment";
+   string className = "LayoutRelative";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "LayoutRelative";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "LayoutFrameFragment";
+   string fragmentVariableName = "layoutFrameFragment";
+   string bcIntentName = "MESSAGE_FROM_LAYOUTFRAME_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_LAYOUTFRAME_BROADCAST";
+   string layoutName = "R.layout.layoutframe_fragment";
+   string className = "LayoutFrame";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "LayoutFrame";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "ImageViewFragment";
+   string fragmentVariableName = "imageViewFragment";
+   string bcIntentName = "MESSAGE_FROM_IMAGEVIEW_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_IMAGEVIEW_BROADCAST";
+   string layoutName = "R.layout.imageview_fragment";
+   string className = "ImageView";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "ImageView";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "GridViewCustomFragment";
+   string fragmentVariableName = "gridViewCustomFragment";
+   string bcIntentName = "MESSAGE_FROM_GRIDVIEWCUSTOM_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_GRIDVIEWCUSTOM_BROADCAST";
+   string layoutName = "R.layout.gridviewcustom_fragment";
+   string className = "GridViewCustom";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "GridViewCustom";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "GridViewFragment";
+   string fragmentVariableName = "gridViewFragment";
+   string bcIntentName = "MESSAGE_FROM_GRIDVIEW_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_GRIDVIEW_BROADCAST";
+   string layoutName = "R.layout.gridview_fragment";
+   string className = "GridView";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "GridView";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "GalleryFragment";
+   string fragmentVariableName = "galleryFragment";
+   string bcIntentName = "MESSAGE_FROM_GALLERY_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.GALLERY_FRAGMENT_BROADCAST";
+   string layoutName = "R.layout.gallery_fragment";
+   string className = "Gallery";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "Gallery";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "DateTimeFragment";
+   string fragmentVariableName = "dateTimeFragment";
+   string bcIntentName = "MESSAGE_FROM_DATETIME_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.DATETIME_FRAGMENT_BROADCAST";
+   string layoutName = "R.layout.datetime_fragment";
+   string className = "DateTime";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "DateTime";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "CheckBoxesFragment";
+   string fragmentVariableName = "checkBoxesFragment";
+   string bcIntentName = "MESSAGE_FROM_CHECKBOXES_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.CHECKBOXES_FRAGMENT_BROADCAST";
+   string layoutName = "R.layout.checkboxes_fragment";
+   string className = "DateTime";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "CheckBoxes";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.commoncontrols";
+   string fragmentClassName = "ButtonsFragment";
+   string fragmentVariableName = "buttonsFragment";
+   string bcIntentName = "MESSAGE_FROM_BUTTONS_INTENT";
+   string bcIntentValue = "dev.ronlemire.commoncontrols.BUTTONS_FRAGMENT_BROADCAST";
+   string layoutName = "R.layout.buttons_fragment";
+   string className = "Buttons";
+   string replacer = "R.id.sample_replacer";
+   string instanceParameter = "Buttons";
+   string topView = "MainActivity.sampleListView";
+
+	string packageName = "dev.ronlemire.edittextsamples";
+   string fragmentClassName = "FragmentValidation";
+   string fragmentVariableName = "validationFragment";
+   string bcIntentName = "VALIDATION_FRAGMENT_BROADCAST_INTENT";
+   string bcIntentValue = "dev.ronlemire.fragmentTemplate.VALIDATION_FRAGMENT_BROADCAST";
+   string layoutName = "R.layout.fragment_validation";
+   string etId = "R.id.etValidation";
+   string etVariableName = "etValidation";
+
+	string packageName = "dev.ronlemire.edittextsamples";
+   string fragmentClassName = "FragmentRegex";
+   string fragmentVariableName = "regexFragment";
+   string bcIntentName = "REGEX_FRAGMENT_BROADCAST_INTENT";
+   string bcIntentValue = "dev.ronlemire.fragmentTemplate.REGEX_FRAGMENT_BROADCAST";
+   string layoutName = "R.layout.fragment_regex";
+   string etId = "R.id.etRegex";
+   string etVariableName = "etRegex";

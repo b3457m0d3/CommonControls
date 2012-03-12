@@ -1,0 +1,342 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".java" #>
+<# 
+   //=============================================================================================================================
+   //Loop setup
+   //=============================================================================================================================
+	var receiverClassNames = new string[] { "MessageFromButtonsReceiver", "MessageFromCheckBoxesReceiver", "MessageFromDateTimeReceiver", 
+	   "MessageFromGalleryReceiver", "MessageFromGridViewReceiver", "MessageFromGridViewCustomReceiver", "MessageFromImageViewReceiver", 
+      "MessageFromLayoutFrameReceiver", "MessageFromLayoutRelativeReceiver", "MessageFromLayoutTable1Receiver", "MessageFromLayoutTable2Receiver", "MessageFromLayoutTable3Receiver", 
+      "MessageFromListView1Receiver", "MessageFromListView2Receiver", "MessageFromListView3Receiver", "MessageFromListView4Receiver", "MessageFromRadioButtonReceiver",
+      "MessageFromSpinnerReceiver", "MessageFromStylesReceiver", "MessageFromTextViewReceiver", "MessageFromWeightGravityReceiver", "MessageFromEditTextReceiver"
+   };
+
+   var fragmentNames = new string[] { "Buttons", "CheckBoxes", "DateTime", "EditText", "Gallery", "GridView", "GridViewCustom", "ImageView", 
+	   "LayoutFrame", "LayoutRelative", "LayoutTable1", "LayoutTable2", "LayoutTable3", "ListView1", "ListView2", "ListView3", "ListView4", 
+      "RadioButton", "Spinner", "Styles", "TextView", "WeightGravity"
+   };
+   
+   var receiverVariableNames = new string[] { "messageFromButtonsReceiver", "messageFromCheckBoxesReceiver", "messageFromDateTimeReceiver", 
+	   "messageFromGalleryReceiver", "messageFromGridViewReceiver", "messageFromGridViewCustomReceiver", "messageFromImageViewReceiver", 
+      "messageFromLayoutFrameReceiver", "messageFromLayoutRelativeReceiver", "messageFromLayoutTable1Receiver", "messageFromLayoutTable2Receiver", "messageFromLayoutTable3Receiver",
+      "messageFromListView1Receiver", "messageFromListView2Receiver", "messageFromListView3Receiver", "messageFromListView4Receiver", "messageFromRadioButtonReceiver",
+      "messageFromSpinnerReceiver", "messageFromStylesReceiver", "messageFromTextViewReceiver", "messageFromWeightGravityReceiver", "messageFromEditTextReceiver"
+   };
+      
+   var intentFilterVariableNames = new string[] { "messageFromButtonsFilter", "messageFromCheckBoxesFilter", "messageFromDateTimeFilter", 
+	   "messageFromGalleryFilter", "messageFromGridViewFilter", "messageFromGridViewCustomFilter", "messageFromImageViewFilter", 
+      "messageFromLayoutFrameFilter", "messageFromLayoutRelativeFilter", "messageFromLayoutTable1Filter", "messageFromLayoutTable2Filter", "messageFromLayoutTable3Filter",
+      "messageFromListView1Filter", "messageFromListView2Filter", "messageFromListView3Filter", "messageFromListView4Filter", "messageFromRadioButtonFilter", 
+      "messageFromSpinnerFilter", "messageFromStylesFilter", "messageFromTextViewFilter", "messageFromWeightGravityFilter", "messageFromEditTextFilter"
+   };
+      
+   var qualifiedIntentNames = new string[] { "ButtonsFragment.MESSAGE_FROM_BUTTONS_INTENT", "CheckBoxesFragment.MESSAGE_FROM_CHECKBOXES_INTENT", 
+	   "DateTimeFragment.MESSAGE_FROM_DATETIME_INTENT", "GalleryFragment.MESSAGE_FROM_GALLERY_INTENT", "GridViewFragment.MESSAGE_FROM_GRIDVIEW_INTENT", 
+      "GridViewCustomFragment.MESSAGE_FROM_GRIDVIEWCUSTOM_INTENT", "ImageViewFragment.MESSAGE_FROM_IMAGEVIEW_INTENT", "LayoutFrameFragment.MESSAGE_FROM_LAYOUTFRAME_INTENT",
+      "LayoutRelativeFragment.MESSAGE_FROM_LAYOUTRELATIVE_INTENT", "LayoutTable1Fragment.MESSAGE_FROM_LAYOUTTABLE1_INTENT", "LayoutTable2Fragment.MESSAGE_FROM_LAYOUTTABLE2_INTENT", 
+      "LayoutTable3Fragment.MESSAGE_FROM_LAYOUTTABLE3_INTENT", "ListView1Fragment.MESSAGE_FROM_LISTVIEW1_INTENT", "ListView2Fragment.MESSAGE_FROM_LISTVIEW2_INTENT",
+      "ListView3Fragment.MESSAGE_FROM_LISTVIEW3_INTENT", "ListView4Fragment.MESSAGE_FROM_LISTVIEW4_INTENT", "RadioButtonFragment.MESSAGE_FROM_RADIOBUTTON_INTENT",
+      "SpinnerFragment.MESSAGE_FROM_SPINNER_INTENT", "StylesFragment.MESSAGE_FROM_STYLES_INTENT", "TextViewFragment.MESSAGE_FROM_TEXTVIEW_INTENT", "WeightGravityFragment.MESSAGE_FROM_WEIGHTGRAVITY_INTENT",
+      "EditTextFragment.MESSAGE_FROM_EDITTEXT_INTENT"
+   };
+      
+   var intentNames = new string[] { "MESSAGE_FROM_BUTTONS_INTENT", "MESSAGE_FROM_CHECKBOXES_INTENT", "MESSAGE_FROM_DATETIME_INTENT", 
+	   "MESSAGE_FROM_GALLERY_INTENT", "MESSAGE_FROM_GRIDVIEW_INTENT", "MESSAGE_FROM_GRIDVIEWCUSTOM_INTENT", "MESSAGE_FROM_IMAGEVIEW_INTENT", 
+      "MESSAGE_FROM_LAYOUTFRAME_INTENT", "MESSAGE_FROM_LAYOUTRELATIVE_INTENT", "MESSAGE_FROM_LAYOUTTABLE1_INTENT", "MESSAGE_FROM_LAYOUTTABLE2_INTENT", "MESSAGE_FROM_LAYOUTTABLE3_INTENT", 
+      "MESSAGE_FROM_LISTVIEW1_INTENT", "MESSAGE_FROM_LISTVIEW2_INTENT", "MESSAGE_FROM_LISTVIEW3_INTENT", "MESSAGE_FROM_LISTVIEW4_INTENT", "MESSAGE_FROM_RADIOBUTTON_INTENT",
+      "MESSAGE_FROM_SPINNER_INTENT", "MESSAGE_FROM_STYLES_INTENT", "MESSAGE_FROM_TEXTVIEW_INTENT", "MESSAGE_FROM_WEIGHTGRAVITY_INTENT", "MESSAGE_FROM_EDITTEXT_INTENT"
+   };
+
+   var fragmentClassNames = new string[] { "ButtonsFragment", "CheckBoxesFragment", "DateTimeFragment", "EditTextFragment", "GalleryFragment", "GridViewFragment", "GridViewCustomFragment", "ImageViewFragment", 
+	   "LayoutFrameFragment", "LayoutRelativeFragment", "LayoutTable1Fragment", "LayoutTable2Fragment", "LayoutTable3Fragment", "ListView1Fragment", "ListView2Fragment", "ListView3Fragment", "ListView4Fragment", 
+      "RadioButtonFragment", "SpinnerFragment", "StylesFragment", "TextViewFragment", "WeightGravityFragment"
+   };
+
+   var fragmentVariableNames = new string[] { "buttonsFragment", "checkBoxesFragment", "dateTimeFragment", "editTextFragment", "galleryFragment", "gridViewFragment", "gridViewCustomFragment", "imageViewFragment", 
+	   "layoutFrameFragment", "layoutRelativeFragment", "layoutTable1Fragment", "layoutTable2Fragment", "layoutTable3Fragment", "listView1Fragment", "listView2Fragment", "listView3Fragment", "listView4Fragment", 
+      "radioButtonFragment", "spinnerFragment", "stylesFragment", "textViewFragment", "weightGravityFragment"
+   };
+
+   string replacer = "R.id.sample_replacer";
+   string topView = "MainActivity.sampleListView";      
+
+   int loopCount = receiverClassNames.Length;
+ #>
+ /*
+ * Copyright 2011 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package dev.ronlemire.commoncontrols;
+
+import com.example.android.actionbarcompat.R;
+
+import dev.ronlemire.commoncontrols.ActionBar.ActionBarFragmentActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+
+public class MainActivity extends ActionBarFragmentActivity {
+	public static final String TAG = "EditTextSamples";
+	private FragmentManager fm = getSupportFragmentManager();
+	private Fragment sampleListFragment;
+	private String sampleSelected;
+	public static View sampleListView;
+	private EditText messagesEditText;
+
+	private SampleListReceiver sampleListReceiver;
+	private IntentFilter sampleListFilter;
+ <# 
+	for (int i = 0; i < loopCount; i++)	{
+	#>
+ 	private <#= receiverClassNames[i] #> <#= receiverVariableNames[i] #>;
+<# } #>
+ <# 
+	for (int i = 0; i < loopCount; i++) {
+	#>
+	private IntentFilter <#= intentFilterVariableNames[i] #>;
+<# } #>
+
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		// Test whether if enough display space for 2 panes. Only if tablet and
+		// landscape.
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE
+				&& isTablet()) {
+			// 2 panes - list on left - sample on right
+			setContentView(R.layout.main_land);
+			StartEmptyFragment(); // clear sample pane
+		} else {
+			// 1 pane - list and sample will overlay each other
+			setContentView(R.layout.main);
+		}
+
+		// Save reference to List in order to replace later
+		sampleListView = this.findViewById(R.id.sampleList_replacer);
+		messagesEditText = (EditText) this.findViewById(R.id.etMessages);
+		messagesEditText.setEnabled(false);
+		messagesEditText.setTextColor(Color.parseColor("#000000")); // black
+
+		// Receiver to catch message sent from List after a sample has been picked
+		sampleListReceiver = new SampleListReceiver();
+		sampleListFilter = new IntentFilter(
+				ListOfControlsFragment.SAMPLE_LIST_FRAGMENT_BROADCAST_INTENT);
+
+		// Messages from controls
+ <# 
+	for (int i = 0; i < loopCount; i++) {
+	#>
+		<#= receiverVariableNames[i] #> = new <#= receiverClassNames[i] #>();
+		<#= intentFilterVariableNames[i] #> = new IntentFilter(
+				<#= qualifiedIntentNames[i] #>);
+
+<# } #>
+		
+		// Fill list pane with sample list
+		StartListofControlsFragment();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		registerReceiver(sampleListReceiver, sampleListFilter);
+ <# 
+	for (int i = 0; i < loopCount; i++) {
+	#>
+		registerReceiver(<#= receiverVariableNames[i] #>, <#= intentFilterVariableNames[i] #>);
+<# } #>
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		unregisterReceiver(sampleListReceiver);
+ <# 
+	for (int i = 0; i < loopCount; i++) {
+	#>
+		unregisterReceiver(<#= receiverVariableNames[i] #>);
+<# } #>
+	}
+
+	// *****************************************************************************
+	// BroadcastReceivers
+	// *****************************************************************************
+	class SampleListReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// Sample selected from list will be in Intent's extra data
+			sampleSelected = intent
+					.getStringExtra(ListOfControlsFragment.SAMPLE_SELECTED);
+
+			// Start sample fragment depending on which sample was selected
+			ClearMessageBox();
+			if (sampleSelected.equals("ButtonsFragment")) {
+				StartButtonsFragment();
+<# 
+	for (int i = 1; i < loopCount; i++)	{
+	#>
+   		} else if (sampleSelected.equals("<#= fragmentNames[i] #>Fragment")) {
+				Start<#= fragmentNames[i] #>Fragment();
+<# } #>
+         }
+		}
+	}
+
+ <# 
+	for (int i = 0; i < loopCount; i++)
+	{
+	#>
+	class <#= receiverClassNames[i] #> extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String message = (String) intent
+					.getSerializableExtra(<#= fragmentNames[i] #>Fragment.OUT_MESSAGE_KEY);
+			messagesEditText.setText(message);
+		}
+	}
+
+<# } #>
+	
+	// *****************************************************************************
+	// Start Fragments
+	// *****************************************************************************
+	public void StartListofControlsFragment() {
+		sampleListFragment = (Fragment) getSupportFragmentManager()
+				.findFragmentById(R.id.sampleList_replacer);
+		sampleListFragment = ListOfControlsFragment
+				.newInstance("inMessageGoesHere");
+		FragmentTransaction fragmentTransaction = getSupportFragmentManager()
+				.beginTransaction();
+		fragmentTransaction.replace(R.id.sampleList_replacer,
+				sampleListFragment);
+		fragmentTransaction.commit();
+	}
+
+	public void StartEmptyFragment() {
+		Fragment sampleEmptyFragment = (Fragment) fm
+				.findFragmentById(R.id.sample_replacer);
+		sampleEmptyFragment = EmptyFragment.newInstance();
+
+		fm.beginTransaction()
+				.replace(R.id.sample_replacer, sampleEmptyFragment).commit(); // begin
+																				// the
+																				// transition
+	}
+
+ <# 
+	for (int i = 0; i < loopCount; i++)
+	{
+	#>
+public void Start<#= fragmentNames[i] #>Fragment() {
+	if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE
+			&& isTablet()) {
+		Fragment <#= fragmentVariableNames[i] #> = (Fragment) fm
+				.findFragmentById(<#= replacer #>);
+		<#= fragmentVariableNames[i] #> = <#= fragmentClassNames[i] #>.newInstance("<#= fragmentNames[i] #>");
+
+		fm.beginTransaction()
+			.replace(<#= replacer #>, <#= fragmentVariableNames[i] #>)
+			.commit();
+	} else {
+		<#= fragmentClassNames[i] #> <#= fragmentVariableNames[i] #> = <#= fragmentClassNames[i] #>
+				.newInstance("<#= fragmentNames[i] #>");
+		getSupportFragmentManager().beginTransaction()
+				.replace(<#= topView #>.getId(), <#= fragmentVariableNames[i] #>)
+				.commit();
+	}
+}	
+
+<# } #>
+
+	// *****************************************************************************
+	// Action Bar
+	// *****************************************************************************
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.main, menu);
+
+		// Calling super after populating the menu is necessary here to ensure
+		// that the action bar helpers have a chance to handle this event.
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			// Toast.makeText(this, "Tapped home", Toast.LENGTH_SHORT).show();
+			ReturnToSampleList();
+			break;
+
+		case R.id.menu_refresh:
+			// Toast.makeText(this, "Fake refreshing...",
+			// Toast.LENGTH_SHORT).show();
+			ReturnToSampleList();
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	// *****************************************************************************
+	// Helper methods
+	// *****************************************************************************
+	private boolean isTablet() {
+		Display display = getWindowManager().getDefaultDisplay();
+		DisplayMetrics displayMetrics = new DisplayMetrics();
+		display.getMetrics(displayMetrics);
+
+		int width = displayMetrics.widthPixels / displayMetrics.densityDpi;
+		int height = displayMetrics.heightPixels / displayMetrics.densityDpi;
+
+		double screenDiagonal = Math.sqrt(width * width + height * height);
+		return (screenDiagonal >= 8.5);
+	}
+
+	private void ReturnToSampleList() {
+      ClearMessageBox();
+		if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE
+				&& isTablet()) {
+			StartListofControlsFragment();
+			StartEmptyFragment();
+		} else {
+			ListOfControlsFragment sampleListFragment = ListOfControlsFragment
+					.newInstance("List");
+			getSupportFragmentManager()
+					.beginTransaction()
+					.replace(MainActivity.sampleListView.getId(),
+							sampleListFragment).commit();
+		}
+	}
+
+	private void ClearMessageBox() {
+		messagesEditText.setText("");
+	}
+}

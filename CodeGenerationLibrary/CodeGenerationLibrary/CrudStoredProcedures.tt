@@ -1,0 +1,38 @@
+<#@ template language="C#" hostspecific="True" debug="True" #>
+<#@ output extension="SQL" #>
+<#@ Assembly Name="Microsoft.SqlServer.ConnectionInfo" #>
+<#@ Assembly Name="Microsoft.SqlServer.Smo" #>
+<#@ Assembly Name="Microsoft.SqlServer.Management.Sdk.Sfc" #>
+<#@ Assembly Name="System.Xml" #>
+<#@ Import Namespace="Microsoft.SqlServer.Management.Smo" #>
+<#
+	Server server = new Server("Neo");
+   Database database = new Database(server, "Northwind");
+   Table table = new Table(database, "Products");
+   table.Refresh();
+#>
+create procedure <#= table.Name #>
+<#
+	PushIndent("\t");
+   foreach (Column column in table.Columns)
+   {
+	   if (column.InPrimaryKey)
+	  {
+	     WriteLine("@" + column.Name + " " + column.DataType.Name);
+	  }
+   }                                                                                 
+   PopIndent();
+#>
+as
+	delete from <#= table.Name #>
+	where
+<#
+	PushIndent("\t\t");
+   foreach (Column column in table.Columns)
+   {
+	   if (column.InPrimaryKey)
+		  WriteLine(column.Name + " = @" + column.Name);	   
+  }
+   PopIndent();
+#>
+

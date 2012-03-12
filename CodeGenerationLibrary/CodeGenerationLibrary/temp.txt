@@ -1,0 +1,107 @@
+﻿
+
+<# 
+	var receiverClassNames = new string[] { "SampleListReceiver", "MessageFromCheckBoxesReceiver" };
+   var receiverVariableNames = new string[] { "sampleListReceiver", "messageFromCheckBoxesReceiver" }; 
+   var intentVariableNames = new string[] { "sampleListFilter", "messageFromCheckBoxesFilter" }; 
+ #>
+<# 
+	int loopCount = receiverClassNames.Length();
+	for (int i = 0; i < loopCount; i++) {
+		
+	} #>
+	private <#= receiverClassNames[i] #> receiverVariableNames[i];
+	private IntentFilter <#= intentVariableNames[i] #>;
+<# } #>
+
+
+
+
+
+<# 
+	var receiverClassNames = new string[] { "SampleListReceiver", "MessageFromCheckBoxesReceiver" };
+   var receiverVariableNames = new string[] { "sampleListReceiver", "messageFromCheckBoxesReceiver" }; 
+   var intentVariableNames = new string[] { "sampleListFilter", "messageFromCheckBoxesFilter" }; 
+ #>
+<# 
+	int loopCount = receiverClassNames.Length();
+	for (int i = 0; i < loopCount; i++) {
+		
+	} #>
+	private <#= receiverClassNames[i] #> receiverVariableNames[i];
+	private IntentFilter <#= intentVariableNames[i] #>;
+<# } #>
+
+
+
+	private SampleListReceiver sampleListReceiver;
+	private MessageFromCheckBoxesReceiver messageFromCheckBoxesReceiver;
+	private IntentFilter sampleListFilter;
+	private IntentFilter messageFromCheckBoxesFilter;
+
+      // Receiver to catch message sent from List after a sample has been picked
+		sampleListReceiver = new SampleListReceiver();
+		sampleListFilter = new IntentFilter(
+				ListOfControlsFragment.SAMPLE_LIST_FRAGMENT_BROADCAST_INTENT);
+
+		// Messages from controls
+		messageFromCheckBoxesReceiver = new MessageFromCheckBoxesReceiver();
+		messageFromCheckBoxesFilter = new IntentFilter(
+				CheckBoxesFragment.MESSAGE_FROM_CHECKBOXES_INTENT);
+
+=============================================================================================================================
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		registerReceiver(sampleListReceiver, sampleListFilter);
+		registerReceiver(messageFromCheckBoxesReceiver, messageFromCheckBoxesFilter);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		unregisterReceiver(sampleListReceiver);
+		unregisterReceiver(messageFromCheckBoxesReceiver);
+	}
+
+	// *****************************************************************************
+	// BroadcastReceivers
+	// *****************************************************************************
+	class SampleListReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// Sample selected from list will be in Intent's extra data
+			sampleSelected = intent
+					.getStringExtra(ListOfControlsFragment.SAMPLE_SELECTED);
+
+			// Start sample fragment depending on which sample was selected
+			if (sampleSelected.equals("ButtonsFragment")) {
+				StartButtonsFragment();
+			} 
+			else if (sampleSelected.equals("CheckBoxesFragment")) {
+				StartCheckBoxesFragment();
+			} 
+			else if (sampleSelected.equals("DateTimeFragment")) {
+				StartDateTimeFragment();
+			}
+		}
+	}
+	
+	class MessageFromCheckBoxesReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String message = (String) intent
+					.getSerializableExtra(CheckBoxesFragment.OUT_MESSAGE_KEY);
+			messagesEditText.setText(message);
+		}
+	}
+	
+=============================================================================================================================
+
+	public static final String MESSAGE_FROM_CHECKBOXES_INTENT = "dev.ronlemire.commoncontrols.MESSAGE_FROM_CHECKBOXES_INTENT";
+
+		intent = new Intent(MESSAGE_FROM_CHECKBOXES_INTENT);
+
+
+

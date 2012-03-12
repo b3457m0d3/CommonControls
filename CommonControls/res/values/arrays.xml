@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="list_titles">
+        <item>Buttons</item>
+        <item>CheckBoxes</item>
+        <item>DateTime</item>
+        <item>EditText</item>
+        <item>Gallery</item>
+        <item>GridView</item>
+        <item>GridViewCustom</item>
+        <item>ImageView</item>
+        <item>LayoutFrame</item>
+        <item>LayoutRelative</item>
+        <item>LayoutTable1</item>
+        <item>LayoutTable2</item>
+        <item>LayoutTable3</item>
+        <item>ListView1</item>
+        <item>ListView2</item>
+        <item>ListView3</item>
+        <item>ListView4</item>
+        <item>RadioButton</item>
+        <item>Spinner</item>
+        <item>Styles</item>
+        <item>TextView</item>
+        <item>WeightGravity</item>
+    </string-array>
+    <string-array name="list_activities">
+        <item>ButtonsFragment</item>
+        <item>CheckBoxesFragment</item>
+        <item>DateTimeFragment</item>
+        <item>EditTextFragment</item>
+        <item>GalleryFragment</item>
+        <item>GridViewFragment</item>
+        <item>GridViewCustomFragment</item>
+        <item>ImageViewFragment</item>
+        <item>LayoutFrameFragment</item>
+        <item>LayoutRelativeFragment</item>
+        <item>LayoutTable1Fragment</item>
+        <item>LayoutTable2Fragment</item>
+        <item>LayoutTable3Fragment</item>
+        <item>ListView1Fragment</item>
+        <item>ListView2Fragment</item>
+        <item>ListView3Fragment</item>
+        <item>ListView4Fragment</item>
+        <item>RadioButtonFragment</item>
+        <item>SpinnerFragment</item>
+        <item>StylesFragment</item>
+        <item>TextViewFragment</item>
+        <item>WeightGravityFragment</item>
+    </string-array>
+</resources>
+    

@@ -1,0 +1,81 @@
+================================================================================
+Summary (along with credit for UI samples)
+================================================================================
+Android Project: CommonControls
+Visual Studio 2010 Project: CodeGenerationLibrary
+
+CommonControls is a collection of 25 samples. These samples demonstrate the most 
+common UI controls used in Android apps: Buttons, CheckBoxes, EditText, Lists
+etc.
+
+All but one of the samples (EditText) came from Chapter 6 of a book called: 
+	Pro Android 3 by Dave MacLean and Satya Komatineni
+	
+What I took from the book:
+	1) Sample layouts
+	2) Java UI code
+	3) Images
+	
+What I changed or added:
+	1) Converted all the books samples from Activities to Fragments
+	2) Added the EditText sample
+	3) Structured the UI for Tablets (List on left, Sample on right)
+	4) Added Action Bar with Refresh button
+	5) Made project backward compatible with pre-3.0 devices
+	6) Setup communication between each sample and the Main Activity
+		via BroadcastReceivers
+	7) Generated all the repetitive UI code with T4 templates
+	
+================================================================================
+Reason for CodeGenerationLibrary
+================================================================================
+As I started to put the samples together I found that I was repeating
+most of the code for each sample. Each Fragment is basically the same
+code except for the Java UI code. Each BroadcastReceiver is the same 
+code except for a few name changes. Enter code generation templates.
+
+So my real contribution this week is a Visual Studio 2010 project called 
+CodeGenerationLibrary that contains three T4 Text Templates that generate all 
+the boring UI code:
+	1) Fragment.tt (run for each fragment with a different set of variables)
+	2) MainActivityFull.tt (generate whole activity with no cut and paste)
+	3) MainActivityParts.tt (generate parts activity then cut and paste)
+	
+There is also another template called CrudStoreProcedures.tt that generates
+T-sql code from Northwind Database using Sql Server Management Objects. 	
+
+================================================================================
+T4 tutorial
+================================================================================
+T4 is used by EF4 to generate the Relational Tables into C# objects. 
+If you haven't used T4 to generate non-C# code here's a couple of links that 
+showed me how to do it:
+		1) http://msdn.microsoft.com/en-us/library/dd820620.aspx
+		2) http://www.olegsych.com/2008/09/t4-tutorial-creatating-your-
+			first-code-generator/  (source of CrudStoredProcedures.tt)
+			
+This was my first try at T4 so I used a very simple model to generate the code:
+	a) C# variables
+	b) C# string arrays
+	
+================================================================================
+Code generation results
+================================================================================
+The results of using T4 or any code generation are amazing.
+I've found that without T4, each Fragment with its corresponding Broadcast
+Receiver code in the MainActivity takes about 45 minutes to 1 hour. With T4 
+I reduced that to about 10 minutes. 
+There is also a big difference in the number of lines of code to write. 
+MainActivityFull.tt is 341 lines but it generates MainActivity.java which is 
+1040 lines.
+
+
+
+
+
+
+
+	
+	
+	
+	
